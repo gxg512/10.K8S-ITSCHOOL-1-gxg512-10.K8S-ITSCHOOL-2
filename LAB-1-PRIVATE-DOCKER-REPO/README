@@ -8,7 +8,7 @@ https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-regi
 
 3)
 kubectl create secret generic regcred \
-    --from-file=.dockerconfigjson=/home/demo/.docker/config.json \
+    --from-file=.dockerconfigjson=/path_to/.docker/config.json \
     --type=kubernetes.io/dockerconfigjson --dry-run=client -o yaml
 
 #########################################
