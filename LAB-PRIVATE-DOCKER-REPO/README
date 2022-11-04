@@ -1,0 +1,13 @@
+https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
+
+
+1) Docker login -> testa ccess
+
+
+2) You need a private repo, only one can be on the free account on dockerhub
+
+3)
+kubectl create secret generic regcred \
+    --from-file=.dockerconfigjson=/home/demo/.docker/config.json \
+    --type=kubernetes.io/dockerconfigjson --dry-run=client -o yaml
+
