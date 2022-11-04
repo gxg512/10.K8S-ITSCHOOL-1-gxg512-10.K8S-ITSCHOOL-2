@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: httpd-container-myserver
-          image: gxg513/mywebsite:v3
+          image: gxg513/mywebsite:v2
           ports:
             - containerPort: 80
       imagePullSecrets:
