@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: httpd-deployment-myserver
+  namespace: test
+  labels:
+    app: webserver
+spec:
+  replicas: 20
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 3
+      maxUnavailable: 1
+  selector:
+    matchLabels:
+      app: webserver
+  template:
+    metadata:
+      labels:
+        app: webserver
+    spec:
+      containers:
+        - name: httpd-container-myserver
+          image: gxg513/mywebsite:v2
+          ports:
+            - containerPort: 80
+      imagePullSecrets:
+        - name: regcred

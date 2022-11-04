@@ -11,3 +11,8 @@ kubectl create secret generic regcred \
     --from-file=.dockerconfigjson=/home/demo/.docker/config.json \
     --type=kubernetes.io/dockerconfigjson --dry-run=client -o yaml
 
+#########################################
+
+PART 2:
+
+ROLLING UPDATE
